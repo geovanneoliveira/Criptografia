@@ -38,7 +38,7 @@ public class Transposicao {
         return criptografado;
     }
 
-    public char[] descriptografrar(char[] palavra, char[] chave){
+    public char[] descriptografar(char[] palavra, char[] chave){
 
         int tamanhoPalavra = palavra.length;
         int coluna = chave.length;
