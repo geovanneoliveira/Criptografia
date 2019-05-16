@@ -13,46 +13,45 @@ public class Vigenere {
     }
 
 
-    public char[] criptografar(char[] palavra, char[] chave){
+    public char[] descriptografar(char[] palavra, char[] chave){
         int length = palavra.length;
-        char[] criptografado = new char[length];
+        char[] descriptografado = new char[length];
 
         for (int caracter = 0; caracter < length; caracter++){
             if(palavra[caracter] == ' '){
-                criptografado[caracter] = ' ';
+            	descriptografado[caracter] = ' ';
                 continue;
             }
             for (int i = 0; i < 26; i++){
                 if(this.matriz[i][0] == chave[caracter]){
                     int indice = (palavra[caracter] - 65 - i);
                     if(indice < 0) indice += 26;
-                    criptografado[caracter] = (this.letras[indice]);
+                    descriptografado[caracter] = (this.letras[indice]);
 
-                }
-            }
-        }
-
-        return criptografado;
-    }
-
-    public char[] descriptografar(char[] palavra, char[] chave){
-
-        int length = palavra.length;
-        char[] descriptografado = new char[length];
-
-        for (int caracter = 0; caracter < length; caracter++){
-            for (int i = 0; i < 26; i ++){
-                if(this.matriz[i][0] == chave[caracter]){
-                    if(palavra[caracter] == ' ' ){
-                        descriptografado[caracter] = ' ';
-                    }else {
-                        descriptografado[caracter] = this.matriz[i][palavra[caracter] - 65];
-                    }
                 }
             }
         }
 
         return descriptografado;
+    }
+
+    public char[] criptografar(char[] palavra, char[] chave){
+
+        int length = palavra.length;
+        char[] criptografado = new char[length];
+
+        for (int caracter = 0; caracter < length; caracter++){
+            for (int i = 0; i < 26; i ++){
+                if(this.matriz[i][0] == chave[caracter]){
+                    if(palavra[caracter] == ' ' ){
+                    	criptografado[caracter] = ' ';
+                    }else {
+                    	criptografado[caracter] = this.matriz[i][palavra[caracter] - 65];
+                    }
+                }
+            }
+        }
+        return criptografado;
 
     }
 

@@ -4,7 +4,7 @@ public class Main {
 
         Criptografia c = new Criptografia();
         String chave = "UPECARUARU";
-        String frase = "Paulo Emir";
+        String frase = "ORGULHO DE SER UPE";
         
         char[] crip = c.criptografar(frase.toCharArray(), chave.toCharArray());
 
